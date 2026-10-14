@@ -161,7 +161,7 @@ jupyter notebook
 # open house_price_prediction_king_county.ipynb → Kernel → Restart & Run All
 ```
 
-Expected runtime: under one minute on a laptop. The two figures are also committed under
+Expected runtime: under one minute on a laptop. All four figures are committed under
 `images/`, so the results can be inspected without executing anything.
 
 ### Repository structure
@@ -170,10 +170,20 @@ Expected runtime: under one minute on a laptop. The two figures are also committ
 .data-science-project/
 ├── README.md
 ├── requirements.txt
-├── house_price_prediction_king_county.ipynb
+├── house_price_prediction_king_county.ipynb   # full analysis (figures 1-2 are produced here)
+├── make_figures.py                            # regenerates the two summary figures
 └── images/
-    ├── fig1_price_by_waterfront.png
-    └── fig2_price_vs_sqft_above.png
+    ├── fig1_price_by_waterfront.png           # price spread by waterfront (EDA)
+    ├── fig2_price_vs_sqft_above.png           # price vs above-ground area (EDA)
+    ├── fig3_model_r2_comparison.png           # R² across the five models
+    └── fig4_feature_correlation.png           # correlation of each feature with price
+```
+
+To redraw the two summary figures without running the notebook:
+
+```bash
+pip install -r requirements.txt
+python make_figures.py
 ```
 
 ---
